@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 195.4 78.3% 89.6%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 195 78% 95%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 195 78% 95%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 200.4 100% 35.3%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 195 50% 85%;
+    --secondary-foreground: 224 71.4% 4.1%;
+    --muted: 195 50% 85%;
+    --muted-foreground: 225.5 8.9% 46.1%;
+    --accent: 190.4 73.1% 74.7%;
+    --accent-foreground: 224 71.4% 4.1%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 200 50% 80%;
+    --input: 200 50% 80%;
+    --ring: 200.4 100% 35.3%;
+    --chart-1: 200 80% 50%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 201 40% 12%;
+    --foreground: 210 20% 98%;
+    --card: 201 40% 15%;
+    --card-foreground: 210 20% 98%;
+    --popover: 201 40% 12%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 200.4 100% 75.3%;
+    --primary-foreground: 201 40% 12%;
+    --secondary: 201 30% 25%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 201 30% 25%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 190.4 73.1% 54.7%;
+    --accent-foreground: 201 40% 12%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 201 30% 25%;
+    --input: 201 30% 25%;
+    --ring: 200.4 100% 75.3%;
+    --chart-1: 200 80% 50%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Add smooth transitions to card elements on hover */
+  .card-hover-effect {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .card-hover-effect:hover {
+    @apply transform -translate-y-1 shadow-lg;
+  }
+}
