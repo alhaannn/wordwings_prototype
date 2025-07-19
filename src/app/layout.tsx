@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Toaster } from '@/components/ui/toaster';
-import { AppProvider } from '@/context/AppContext';
+import { ClientProvider } from '@/context/ClientProvider';
 
 export const metadata: Metadata = {
   title: 'WordWings',
@@ -24,12 +23,9 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased flex flex-col min-h-screen">
-        <AppProvider>
-          <div className="flex-grow">
-            {children}
-          </div>
-          <Toaster />
-        </AppProvider>
+        <ClientProvider>
+          {children}
+        </ClientProvider>
       </body>
     </html>
   );

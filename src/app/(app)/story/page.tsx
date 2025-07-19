@@ -1,8 +1,7 @@
 
 'use client';
 
-import { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { Suspense, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
@@ -27,7 +26,7 @@ const csTopics = [
     'Interview Preparation'
 ];
 
-export default function StoryPage() {
+function StoryGenerator() {
   const { incrementStoriesGenerated } = useAppContext();
 
   const [targetWords, setTargetWords] = useState('');
@@ -214,5 +213,13 @@ export default function StoryPage() {
         </Card>
       </div>
     </div>
+  );
+}
+
+export default function StoryPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <StoryGenerator />
+    </Suspense>
   );
 }
